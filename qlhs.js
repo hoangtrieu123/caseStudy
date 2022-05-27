@@ -13,12 +13,12 @@ function checkID(id) {
 function addData() {
     var id = document.getElementById("id").value;
     var name = document.getElementById("name").value;
-    var addres = document.getElementById("address").value;
+    var address = document.getElementById("address").value;
     var email = document.getElementById("email").value;
     var item = {
         id: id,
         name: name,
-        addres: addres,
+        address: address,
         email: email,
     }
     if (checkID(id)) {
@@ -28,6 +28,8 @@ function addData() {
     } else {
         alert("ID học sinh bị trùng")
     }
+    console.log(id)
+    console.log(data)
 
 }
 function clear(){
@@ -39,7 +41,7 @@ function clear(){
 function editData(id) {
     var list = data
     for (let i = 0; i < list.length; i++) {
-        if (list[i].id === id) {
+        if (list[i].id == id) {
             document.getElementById("id").value = list[i].id
             document.getElementById("name").value = list[i].name
             document.getElementById("address").value = list[i].address
@@ -77,9 +79,9 @@ function viewData() {
         table += '<tr>'
         table += '<td>' + list[i].id + '</td>'
         table += '<td>' + list[i].name + '</td>'
-        table += '<td>' + list[i].addres + '</td>'
+        table += '<td>' + list[i].address + '</td>'
         table += '<td>' + list[i].email + '</td>'
-        table += '<td><button onclick="editData(' + list[i].id + ')">Sửa</button>&nbsp;<button onclick="deleteData(' + list[i].id + ')">Xóa</button></td>'
+        table += `<td><button onclick="editData('${list[i].id}')">Sửa</button>&nbsp;<button onclick="deleteData('${list[i].id}')">Xóa</button></td>`
         table += '</tr>'
     }
     table += '</tbody></table>'
