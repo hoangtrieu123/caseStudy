@@ -43,8 +43,8 @@ function clear() {
 
 function editData(id) {
 
-    document.getElementById("confirm").innerHTML = "<button id=addData onClick=addData()>Thêm</button>" +
-        "&nbsp;"+"<td><button onclick=confirmData('${list[i].id}')>Xác nhận sửa</button>"
+    document.getElementById("confirm").innerHTML = "<button class='btn1' id=addData onClick=addData()>Thêm</button>" +
+        "&nbsp;"+"<td> <button class='btn1' onclick=confirmData('${list[i].id}')> Xác nhận sửa</button>"
     for (let i = 0; i < list.length; i++) {
         if (list[i].id == id) {
             document.getElementById("id").value = list[i].id
@@ -97,8 +97,8 @@ function viewData() {
         table += '<td>' + list[i].address + '</td>'
         table += '<td>' + list[i].email + '</td>'
         table += `<td>
-<button onclick="editData('${list[i].id}')">Sửa</button>
-<button onclick="deleteData('${list[i].id}')">Xóa</button>
+<button class="btn1" onclick="editData('${list[i].id}')">Sửa</button>
+<button class="btn1" onclick="deleteData('${list[i].id}')">Xóa</button>
 </td>`
         table += '</tr>'
     }
@@ -106,3 +106,4 @@ function viewData() {
     document.getElementById("result").innerHTML = table
 
 }
+
